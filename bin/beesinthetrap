@@ -1,0 +1,49 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use BeesInTheTrap\Entities\Player;
+use BeesInTheTrap\Game\{Game, Hive};
+
+// Setup game
+$player = new Player();
+$hive = new Hive();
+$game = new Game($player, $hive);
+
+// Check for auto mode
+$autoMode = in_array('--auto', $argv);
+
+echo "\n🐝 Welcome to BEES IN THE TRAP! 🐝\n";
+echo "=================================\n";
+echo "Ready to face the swarm? Good luck, brave warrior!\n";
+echo "Type 'hit' to attack, or Ctrl+C to retreat (no shame in that!)\n\n";
+
+while (!$game->isGameOver()) {
+    echo "\n" . $game->getStatus() . "\n";
+
+    if (!$autoMode) {
+        $input = trim(fgets(STDIN));
+        if ($input !== 'hit') {
+            echo "\n🤔 Hmm... try typing 'hit' to attack the hive!\n";
+            continue;
+        }
+    }
+
+    // Player's turn
+    echo "\n" . $game->playerTurn() . "\n";
+    
+    if ($game->isGameOver()) {
+        break;
+    }
+
+    // Bees' turn
+    echo $game->beeTurn() . "\n";
+
+    if ($autoMode) {
+        echo "Auto-battler mode engaged! Watching the chaos unfold...\n";
+        usleep(500000); // A brief pause between the chaos
+    }
+}
+
+echo "\n" . $game->getGameOverMessage() . "\n";

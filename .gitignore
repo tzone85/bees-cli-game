@@ -1,0 +1,50 @@
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# PHPUnit
+.phpunit.result.cache
+.phpunit.cache/
+
+# PHP CS Fixer
+.php-cs-fixer.cache
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Cache and temporary files
+/cache/
+/tmp/
+*.cache
+
+# Build directories
+/build/
+/dist/
+
+# Test coverage reports
+/coverage/
+clover.xml
+*.coverage
+*.coveragexml
+
+# Other
+*.bak
+*.tmp
+*~
