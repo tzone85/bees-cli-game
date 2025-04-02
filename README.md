@@ -2,6 +2,39 @@
 
 A command-line game where you battle against a hive of bees! Try to defeat the queen bee while avoiding getting stung too many times.
 
+## Repository
+
+```
+https://github.com/tzone85/bees-cli-game.git
+```
+
+## Project Structure
+
+```
+bees/
+├── bin/
+│   └── beesinthetrap      # Command-line entry point
+├── src/
+│   ├── Entities/
+│   │   ├── Bee.php
+│   │   ├── QueenBee.php
+│   │   ├── WorkerBee.php
+│   │   ├── DroneBee.php
+│   │   └── Player.php
+│   ├── Exceptions/        # Custom exceptions
+│   │   ├── GameException.php
+│   │   └── HiveException.php
+│   └── Game/             # Game mechanics
+│       ├── Game.php
+│       └── Hive.php
+├── tests/                # Test suite
+│   └── Game/
+│       └── GameTest.php  # Game logic tests
+├── composer.json
+├── phpunit.xml
+└── README.md
+```
+
 ## Game Flow
 
 Here's a visual representation of the game's flow and mechanics:
@@ -18,7 +51,7 @@ flowchart TD
     H -->|No| I[Throw HiveException]
     H -->|Yes| J[Calculate & Apply Damage]
     J --> K[Return Hit Message]
-    
+
     L[Bee's Turn] --> M{Is Game Over?}
     M -->|Yes| N[Throw GameException]
     M -->|No| O{Random Miss?}
@@ -28,7 +61,7 @@ flowchart TD
     R -->|No| S[Throw HiveException]
     R -->|Yes| T[Apply Sting Damage]
     T --> U[Return Sting Message]
-    
+
     V[Check Game Over] --> W{Player Alive?}
     W -->|No| X[Game Over - Player Lost]
     W -->|Yes| Y{Queen Alive?}
@@ -96,11 +129,13 @@ A command-line game where you must destroy a hive of bees before they sting you 
 ## How to Play
 
 Run the game:
+
 ```bash
 ./bin/beesinthetrap
 ```
 
 For auto-play mode:
+
 ```bash
 ./bin/beesinthetrap --auto
 ```
