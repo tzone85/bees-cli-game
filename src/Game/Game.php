@@ -36,8 +36,8 @@ class Game
     {
         if ($this->isGameOver()) {
             throw GameException::gameAlreadyOver(
-                $this->player->isAlive() 
-                    ? 'The hive is already destroyed!' 
+                $this->player->isAlive()
+                    ? 'The hive is already destroyed!'
                     : 'You have been defeated!'
             );
         }
@@ -84,8 +84,8 @@ class Game
     {
         if ($this->isGameOver()) {
             throw GameException::gameAlreadyOver(
-                $this->player->isAlive() 
-                    ? 'The hive is already destroyed!' 
+                $this->player->isAlive()
+                    ? 'The hive is already destroyed!'
                     : 'You have been defeated!'
             );
         }

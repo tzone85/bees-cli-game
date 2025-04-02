@@ -4,7 +4,7 @@ namespace BeesInTheTrap\Entities;
 
 class Player
 {
-    private int $hitPoints = 30;
+    private int $hitPoints = 100;
     private int $hitCount = 0;
     private int $stingsReceived = 0;
 

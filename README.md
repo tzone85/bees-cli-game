@@ -4,8 +4,21 @@ A command-line game where you battle against a hive of bees! Try to defeat the q
 
 ## Repository
 
+This game is available at: https://github.com/tzone85/bees-cli-game
+
+### Getting Started
+
+To get a local copy up and running, follow these steps:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/tzone85/bees-cli-game.git bees
+cd bees
 ```
-https://github.com/tzone85/bees-cli-game.git
+
+2. Install dependencies:
+```bash
+composer install
 ```
 
 ## Project Structure
